@@ -23,7 +23,7 @@ jobs:
         fetch-depth: 1
 
     - name: Build Docker Image
-      run: docker build -t techbookfest . template
+      run: docker build -t techbookfest template
 
     - name: Run Docker Image
       run: docker run --rm -v `pwd`/template:/work techbookfest /bin/sh -c "cd /work && textlint *.re && review-pdfmaker config.yml"
