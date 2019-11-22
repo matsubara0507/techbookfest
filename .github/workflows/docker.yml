@@ -1,7 +1,10 @@
 name: Build and Deploy Docker Image
 
 on:
-  pull_request: null
+  pull_request:
+    paths:
+    - '**/Dockerfile'
+    - '.github/workflows/docker.yml'
   push:
     branches:
     - master
